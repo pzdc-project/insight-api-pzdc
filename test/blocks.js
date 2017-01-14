@@ -49,7 +49,7 @@ var blockIndexes = {
   },
   '000000000000c53bf17a98b9ee042d6d4c3faf37d7a9f5c1335cce6df896f2f4': {
     hash: '000000000000c53bf17a98b9ee042d6d4c3faf37d7a9f5c1335cce6df896f2f4',
-    chainwork: '00000000000000000000000000000000000000000000000147108bdaa532b7cf',
+    chainWork: '00000000000000000000000000000000000000000000000147108bdaa532b7cf',
     prevHash: '00000000000025fbeac57a69598c7aa4c26954e33aba1e1883bb4bf168e8e6b4',
     nextHash: '000000000000a0b730b5be60e65b4a730d1fdcf1d023c9e42c0e5bf4a059f709',
     confirmations: 42,
@@ -64,7 +64,7 @@ var blockIndexes = {
   },
   599999: {
     hash: '000000000000c53bf17a98b9ee042d6d4c3faf37d7a9f5c1335cce6df896f2f4',
-    chainwork: '00000000000000000000000000000000000000000000000147108bdaa532b7cf',
+    chainWork: '00000000000000000000000000000000000000000000000147108bdaa532b7cf',
     prevHash: '00000000000025fbeac57a69598c7aa4c26954e33aba1e1883bb4bf168e8e6b4',
     height: 599999
   }
@@ -124,7 +124,6 @@ describe('Blocks', function() {
       var next = function() {
         should.exist(req.block);
         var block = req.block;
-        block.chainwork = '00000000000000000000000000000000000000000000000147108bdaa532b7cf'; // workaround until we can figure out how to stub multiple getBlock requests
         should(block).eql(insight);
         done();
       };
