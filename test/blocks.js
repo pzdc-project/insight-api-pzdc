@@ -93,7 +93,7 @@ describe('Blocks', function() {
       'chainwork': '00000000000000000000000000000000000000000000000147108bdaa532b7cf',
       'previousblockhash': '00000000000025fbeac57a69598c7aa4c26954e33aba1e1883bb4bf168e8e6b4',
       'nextblockhash': '000000000000a0b730b5be60e65b4a730d1fdcf1d023c9e42c0e5bf4a059f709',
-      'reward': '3.88',
+      'reward': '3.88010204',
       'isMainChain': true,
       'poolInfo': {}
     };
@@ -302,7 +302,7 @@ describe('Blocks', function() {
     var cb = function(err, res) {
       should.exist(res);
       var reward = res;
-      should(reward).eql('5.00');
+      should(reward).eql('5.00000000');
       done();
     };
 
@@ -329,7 +329,7 @@ describe('Blocks', function() {
     var cb = function(err, res) {
       should.exist(res);
       var reward = res;
-      should(reward).eql('6.08');
+      should(reward).eql('6.07737750');
       done();
     };
 
@@ -356,7 +356,7 @@ describe('Blocks', function() {
     var cb = function(err, res) {
       should.exist(res);
       var reward = res;
-      should(reward).eql('3.88');
+      should(reward).eql('3.88010204');
       done();
     };
 
