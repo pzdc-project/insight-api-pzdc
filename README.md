@@ -264,6 +264,30 @@ POST params:
 addrs: 2NF2baYuJAkCKo5onjUKEPdARQkZ6SYyKd5,2NAre8sX2povnjy4aeiHKeEh97Qhn97tB1f
 ```
 
+### InstantSend Transactions
+If a Transaction Lock has been observed by Insight API a 'txlock' value of true will be included in the Transaction Object.
+
+Sample output:
+```
+{
+	"txid": "b7ef92d1dce458276f1189e06bf532eff78f9c504101d3d4c0dfdcd9ebbf3879",
+	"version": 1,
+	"locktime": 133366,
+	"vin": [{ ... }],
+	"vout": [{ ... }],
+	"blockhash": "0000001ab9a138339fe4505a299525ace8cda3b9bcb258a2e5d93ed7a320bf21",
+	"blockheight": 133367,
+	"confirmations": 37,
+	"time": 1483985187,
+	"blocktime": 1483985187,
+	"valueOut": 8.998,
+	"size": 226,
+	"valueIn": 8.999,
+	"fees": 0.001,
+	"txlock": true
+}
+```
+
 ### Transactions by Block
 ```
   /insight-api-dash/txs/?block=HASH
@@ -317,7 +341,8 @@ Sample output:
        size: 225,
        firstSeenTs: undefined,
        valueIn: 0.3454,
-       fees: 0.0001 },
+       fees: 0.0001,
+       txlock: false },
       { ... },
       { ... },
       ...
@@ -487,6 +512,79 @@ POST response:
       txid: "c7736a0a0046d5a8cc61c8c3c2821d4d7517f5de2bc66a966011aaa79965ffba"
   }
 ```
+
+### Budget Proposal List
+GET method:
+```
+  /insight-api-dash/gobject/list/proposal
+```
+
+Sample output:
+```
+    [ { Hash: 'b6af3e70c686f660541a77bc035df2e5e46841020699ce3ec8fad786f7d1aa35',
+        DataObject: {
+          end_epoch: 1513555200,
+          name: 'flare03',
+          payment_address: 'yViyoK3NwfH5GXRo7e4DEYkzzhBjDNQaQG',
+          payment_amount: 5,
+          start_epoch: 1482105600,
+          type: 1,
+          url: 'https://www.dash.org'
+        },
+        AbsoluteYesCount: 40,
+        YesCount: 40,
+        NoCount: 0,
+        AbstainCount: 0 } ]
+```
+
+### Budget Proposal Detail
+GET method:
+```
+  /insight-api-dash/gobject/get/[:hash]
+  /insight-api-dash/gobject/get/b6af3e70c686f660541a77bc035df2e5e46841020699ce3ec8fad786f7d1aa35
+```
+
+Sample output:
+```
+    [ { Hash: 'b6af3e70c686f660541a77bc035df2e5e46841020699ce3ec8fad786f7d1aa35',
+        CollateralHash: '24a71d8f221659717560365d2914bc7a00f82ffb8f8c68e7fffce5f35aa23b90',
+       	DataHex: '5b5b2270726f706f73616c222c7b22656e645f65706f6368223a313531333535353230302c226e616d65223a22666c6172653033222c227061796d656e745f61646472657373223a22795669796f4b334e776648354758526f3765344445596b7a7a68426a444e51615147222c227061796d656e745f616d6f756e74223a352c2273746172745f65706f6368223a313438323130353630302c2274797065223a312c2275726c223a2268747470733a2f2f64617368646f742e696f2f702f666c6172653033227d5d5d',
+        DataObject: {
+          end_epoch: 1513555200,
+          name: 'flare03',
+          payment_address: 'yViyoK3NwfH5GXRo7e4DEYkzzhBjDNQaQG',
+          payment_amount: 5,
+          start_epoch: 1482105600,
+          type: 1,
+          url: 'https://www.dash.org'
+        },
+        CreationTime: 1482223714,
+        FundingResult: {
+            AbsoluteYesCount: 40,
+            YesCount: 40,
+            NoCount: 0,
+            AbstainCount: 0
+        },
+        ValidResult: {
+            AbsoluteYesCount: 74,
+            YesCount: 74,
+            NoCount: 0,
+            AbstainCount: 0
+        },
+        DeleteResult: {
+            AbsoluteYesCount: 0,
+            YesCount: 0,
+            NoCount: 0,
+            AbstainCount: 0
+        },
+        EndorsedResult: {
+            AbsoluteYesCount: 0,
+            YesCount: 0,
+            NoCount: 0,
+            AbstainCount: 0
+        } } ]
+```
+
 
 ### Historic Blockchain Data Sync Status
 ```
