@@ -75,6 +75,7 @@ describe('Status', function() {
         jsonp: function(data) {
           should.exist(data[0].vin);
           should.exist(data[0].status);
+          data[0].status.should.not.be.eql('');
           should.exist(data[0].protocol);
           should.exist(data[0].payee);
           should.exist(data[0].lastseen);
