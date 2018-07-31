@@ -1,80 +1,88 @@
 {
-  "name": "insight-api-dash",
-  "description": "A Dash blockchain REST and web socket API service for Bitcore Node.",
-  "version": "0.4.5",
-  "repository": "git://github.com/dashpay/insight-api-dash.git",
-  "contributors": [
-    {
-      "name": "Gustavo Cortez",
-      "email": "cmgustavo83@gmail.com"
-    },
-    {
-      "name": "Ivan Socolsky",
-      "email": "jungans@gmail.com"
-    },
-    {
-      "name": "Juan Ignacio Sosa Lopez",
-      "email": "bechilandia@gmail.com"
-    },
-    {
-      "name": "Manuel Araoz",
-      "email": "manuelaraoz@gmail.com"
-    },
-    {
-      "name": "Matias Alejo Garcia",
-      "email": "ematiu@gmail.com"
-    },
-    {
-      "name": "Mario Colque",
-      "email": "colquemario@gmail.com"
-    },
-    {
-      "name": "Patrick Nagurny",
-      "email": "patrick@bitpay.com"
-    },
-    {
-      "name": "Braydon Fuller",
-      "email": "braydon@bitpay.com"
-    }
-  ],
+  "name": "insight-bitcore-api-dash",
+  "description": "An open-source bitcoin blockchain API. The Insight API provides you with a convenient, powerful and simple way to query and broadcast data on the bitcoin network and build your own services with it.",
+  "version": "0.2.19",
+  "repository": "git://github.com/bitpay/insight-api.git",
+  "contributors": [{
+    "name": "Matias Alejo Garcia",
+    "email": "ematiu@gmail.com"
+  }, {
+    "name": "Manuel Araoz",
+    "email": "manuelaraoz@gmail.com"
+  }, {
+    "name": "Mario Colque",
+    "email": "colquemario@gmail.com"
+  }, {
+    "name": "Gustavo Cortez",
+    "email": "cmgustavo83@gmail.com"
+  }, {
+    "name": "Juan Ignacio Sosa Lopez",
+    "email": "bechilandia@gmail.com"
+  }, {
+    "name": "Ivan Socolsky",
+    "email": "jungans@gmail.com"
+  }],
   "bugs": {
-    "url": "https://github.com/dashpay/insight-api-dash/issues"
+    "url": "https://github.com/bitpay/insight-api/issues"
   },
-  "homepage": "https://github.com/dashpay/insight-api-dash",
+  "homepage": "https://github.com/bitpay/insight-api",
   "license": "MIT",
   "keywords": [
     "insight",
     "insight api",
     "blockchain",
-    "dash api",
+    "bitcoin api",
     "blockchain api",
     "json",
-    "bitcore-dash"
+    "bitcore"
   ],
   "engines": {
-    "node": ">=0.12.0"
+    "node": "*"
   },
+  "bin": "insight.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha -R spec --recursive"
+    "start": "node insight.js"
   },
-  "main": "lib",
-  "bitcoreNode": "lib",
   "dependencies": {
     "async": "*",
-    "bitcore-lib-dash": "^0.13.20",
-    "bitcore-message-dash": "^1.0.5",
-    "body-parser": "^1.13.3",
-    "compression": "^1.6.1",
+    "base58-native": "0.1.2",
+    "bignum": "*",
+    "morgan": "*",
+    "darkcore": "git://github.com/genitrust/darkcore.git",
+    "bufferput": "git://github.com/bitpay/node-bufferput.git",
+    "buffertools": "*",
+    "commander": "^2.3.0",
+    "connect-ratelimit": "git://github.com/dharmafly/connect-ratelimit.git#0550eff209c54f35078f46445000797fa942ab97",
+    "cron": "^1.0.4",
+    "express": "~3.4.7",
+    "glob": "*",
+    "leveldown": "~0.10.0",
+    "levelup": "~0.19.0",
     "lodash": "^2.4.1",
-    "lru-cache": "^4.0.1",
-    "morgan": "^1.7.0",
-    "request": "^2.64.0"
+    "microtime": "^0.6.0",
+    "mkdirp": "^0.5.0",
+    "moment": "~2.20.0",
+    "preconditions": "^1.0.7",
+    "request": "^2.48.0",
+    "socket.io": "1.0.6",
+    "socket.io-client": "1.0.6",
+    "soop": "=0.1.5",
+    "winston": "*",
+    "xmlhttprequest": "~1.6.0"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.4.5",
-    "proxyquire": "^1.7.2",
-    "should": "^8.3.1",
+    "chai": "*",
+    "grunt": "~0.4.2",
+    "grunt-cli": "~0.1.11",
+    "grunt-concurrent": "~0.4.2",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-env": "~0.4.1",
+    "grunt-markdown": "~0.5.0",
+    "grunt-mocha-test": "~0.8.1",
+    "grunt-nodemon": "~0.2.0",
+    "memdown": "^0.10.2",
+    "should": "^2.1.1",
     "sinon": "^1.10.3"
   }
 }
