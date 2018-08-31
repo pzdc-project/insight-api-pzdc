@@ -24,15 +24,15 @@ var home = process.env.INSIGHT_DB || (getUserHome() + '/.insight');
 if (process.env.INSIGHT_NETWORK === 'livenet') {
   env = 'livenet';
   db = home;
-  port = '8015';
-  b_port = '51473';
-  p2p_port = '51473';
+  port = '21213';
+  b_port = '21212';
+  p2p_port = '21212';
 } else {
   env = 'testnet';
   db = home + '/testnet';
-  port = '8015';
-  b_port = '51475';
-  p2p_port = '51475';
+  port = '21113';
+  b_port = '21112';
+  p2p_port = '21112';
 }
 port = parseInt(process.env.INSIGHT_PORT) || port;
 
@@ -52,14 +52,14 @@ switch (process.env.NODE_ENV) {
 var network = process.env.INSIGHT_NETWORK || 'testnet';
 var forceRPCsync = process.env.INSIGHT_FORCE_RPC_SYNC;
 
-var dataDir = process.env.BITCOIND_DATADIR;
+var dataDir = process.env.PZDCD_DATADIR;
 var isWin = /^win/.test(process.platform);
 var isMac = /^darwin/.test(process.platform);
 var isLinux = /^linux/.test(process.platform);
 if (!dataDir) {
-  if (isWin) dataDir = '%APPDATA%\\Pivx\\';
-  if (isMac) dataDir = process.env.HOME + '/Library/Application Support/Pivx/';
-  if (isLinux) dataDir = process.env.HOME + '/.pivx/';
+  if (isWin) dataDir = '%APPDATA%\\pzdc\\';
+  if (isMac) dataDir = process.env.HOME + '/Library/Application Support/pzdc/';
+  if (isLinux) dataDir = process.env.HOME + '/.pzdc/';
 }
 dataDir += network === 'testnet' ? 'testnet4' : '';
 
@@ -67,14 +67,14 @@ var safeConfirmations = process.env.INSIGHT_SAFE_CONFIRMATIONS || 6;
 var ignoreCache = process.env.INSIGHT_IGNORE_CACHE || 0;
 
 
-var bitcoindConf = {
-  protocol: process.env.BITCOIND_PROTO || 'http',
-  user: process.env.BITCOIND_USER || 'user',
-  pass: process.env.BITCOIND_PASS || 'pass',
-  host: process.env.BITCOIND_HOST || '127.0.0.1',
-  port: process.env.BITCOIND_PORT || b_port,
-  p2pPort: process.env.BITCOIND_P2P_PORT || p2p_port,
-  p2pHost: process.env.BITCOIND_P2P_HOST || process.env.BITCOIND_HOST || '127.0.0.1',
+var pzdcdConf = {
+  protocol: process.env.PZDCD_PROTO || 'http',
+  user: process.env.PZDCD_USER || 'user',
+  pass: process.env.PZDCD_PASS || 'pass',
+  host: process.env.PZDCD_HOST || '127.0.0.1',
+  port: process.env.PZDCD_PORT || b_port,
+  p2pPort: process.env.PZDCD_P2P_PORT || p2p_port,
+  p2pHost: process.env.PZDCD_P2P_HOST || process.env.PZDCD_HOST || '127.0.0.1',
   dataDir: dataDir,
   // DO NOT CHANGE THIS!
   disableAgent: true
@@ -105,7 +105,7 @@ module.exports = {
   apiPrefix: '/api',
   port: port,
   leveldb: db,
-  bitcoind: bitcoindConf,
+  pzdcd: pzdcdConf,
   network: network,
   disableP2pSync: false,
   disableHistoricSync: false,

@@ -7,7 +7,7 @@
 
   var _ = require('lodash');
   var async = require('async');
-  var bitcore = require('darkcore');
+  var bitcore = require('pzdccore-js');
   var crypto = require('crypto');
   var fs = require('fs');
   var levelup = require('levelup');

@@ -11,10 +11,10 @@ var util        = require('util');
 var Rpc         = require('../../lib/Rpc');
 
 var imports     = require('soop').imports();
-var bitcore     = require('darkcore');
+var bitcore     = require('pzdccore-js');
 var RpcClient   = bitcore.RpcClient;
 var config      = require('../../config/config');
-var bitcoreRpc  = imports.bitcoreRpc || new RpcClient(config.bitcoind);
+var bitcoreRpc  = imports.bitcoreRpc || new RpcClient(config.pzdcd);
 
 var tDb = require('../../lib/TransactionDb').default();
 var bdb = require('../../lib/BlockDb').default();

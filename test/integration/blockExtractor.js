@@ -16,7 +16,7 @@ var should = require('chai');
 
 describe('BlockExtractor', function(){
 
-  var be = new BlockExtractor(config.bitcoind.dataDir, config.network);
+  var be = new BlockExtractor(config.pzdcd.dataDir, config.network);
 
   var network = config.network === 'testnet' ? networks.testnet: networks.livenet;
 

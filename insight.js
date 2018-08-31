@@ -34,26 +34,26 @@ program.on('--help', function () {
 \tINSIGHT_DB (Database Path):  %s\n\
 \tINSIGHT_SAFE_CONFIRMATIONS (Safe Confirmations):  %s\n\
 \tINSIGHT_IGNORE_CACHE (Ignore Cache):  %s\n\
- # Bicoind Connection configuration:\n\
-\tRPC Username: %s\t\tBITCOIND_USER\n\
-\tRPC Password: %s\tBITCOIND_PASS\n\
-\tRPC Protocol: %s\t\tBITCOIND_PROTO\n\
-\tRPC Host: %s\t\tBITCOIND_HOST\n\
-\tRPC Port: %s\t\t\tBITCOIND_PORT\n\
-\tP2P Port: %s\t\t\tBITCOIND_P2P_PORT\n\
-\tBITCOIND_DATADIR: %s\n\
+ # PZDCd Connection configuration:\n\
+\tRPC Username: %s\t\tPZDCD_USER\n\
+\tRPC Password: %s\tPZDCD_PASS\n\
+\tRPC Protocol: %s\t\tPZDCD_PROTO\n\
+\tRPC Host: %s\t\tPZDCD_HOST\n\
+\tRPC Port: %s\t\t\tPZDCD_PORT\n\
+\tP2P Port: %s\t\t\tPZDCD_P2P_PORT\n\
+\tPZDCD_DATADIR: %s\n\
 \t%s\n\
 \nChange setting by assigning the enviroment variables above. Example:\n\
- $ INSIGHT_NETWORK="testnet" BITCOIND_HOST="123.123.123.123" ./insight.js\
+ $ INSIGHT_NETWORK="testnet" PZDCD_HOST="123.123.123.123" ./insight.js\
 \n\n',
     config.network, config.leveldb, config.safeConfirmations, config.ignoreCache ? 'yes' : 'no',
-    config.bitcoind.user,
-    config.bitcoind.pass ? 'Yes(hidden)' : 'No',
-    config.bitcoind.protocol,
-    config.bitcoind.host,
-    config.bitcoind.port,
-    config.bitcoind.p2pPort,
-    config.bitcoind.dataDir + (config.network === 'testnet' ? '*' : ''), (config.network === 'testnet' ? '* (/testnet3 is added automatically)' : '')
+    config.pzdcd.user,
+    config.pzdcd.pass ? 'Yes(hidden)' : 'No',
+    config.pzdcd.protocol,
+    config.pzdcd.host,
+    config.pzdcd.port,
+    config.pzdcd.p2pPort,
+    config.pzdcd.dataDir + (config.network === 'testnet' ? '*' : ''), (config.network === 'testnet' ? '* (/testnet3 is added automatically)' : '')
   );
 });
 

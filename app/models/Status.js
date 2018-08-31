@@ -2,10 +2,10 @@
 //var imports       = require('soop').imports();
 
 var async     = require('async');
-var bitcore   = require('darkcore');
+var bitcore   = require('pzdccore-js');
 var RpcClient = bitcore.RpcClient;
 var config    = require('../../config/config');
-var rpc       = new RpcClient(config.bitcoind);
+var rpc       = new RpcClient(config.pzdcd);
 var bDb       = require('../../lib/BlockDb').default();
 
 function Status() {}

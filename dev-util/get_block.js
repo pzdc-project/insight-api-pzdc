@@ -15,7 +15,7 @@ var config = require('../config/config');
 
 //hash = 'e2253359458db3e732c82a43fc62f56979ff59928f25a2df34dfa443e9a41160';
 
-var rpc   = new RpcClient(config.bitcoind);
+var rpc   = new RpcClient(config.pzdcd);
 
 rpc.getBlock( hash,  function(err, ret) {
 

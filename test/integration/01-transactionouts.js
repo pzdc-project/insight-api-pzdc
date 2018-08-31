@@ -51,7 +51,7 @@ describe('TransactionDb fromIdWithInfo', function(){
     });
   });
 
-  it('should pool tx\'s info from bitcoind', function(done) {
+  it('should pool tx\'s info from pzdcd', function(done) {
     var txid = '21798ddc9664ac0ef618f52b151dda82dafaf2e26d2bbef6cdaf55a6957ca237';
     txDb.fromIdWithInfo(txid, function(err, tx) {
       if (err) done(err);

@@ -1,5 +1,5 @@
 var levelup = require('levelup');
-var bitcore = require('darkcore');
+var bitcore = require('pzdccore-js');
 var _ = require('lodash');
 
 var home = process.env['HOME'];

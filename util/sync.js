@@ -13,7 +13,7 @@ var async = require('async');
 program
   .version(SYNC_VERSION)
   .option('-D --destroy', 'Remove current DB (and start from there)', 0)
-  .option('-S --startfile', 'Number of file from bitcoind to start(default=0)')
+  .option('-S --startfile', 'Number of file from pzdcd to start(default=0)')
   .option('-R --rpc', 'Force sync with RPC')
   .option('--start [hash]', 'StartAt block')
   .option('--stop [hash]', 'StopAt block')

@@ -2,7 +2,7 @@
 
 // server-side socket behaviour
 var ios = null; // io is already taken in express
-var util = require('darkcore').util;
+var util = require('pzdccore-js').util;
 var logger = require('../../lib/logger').logger;
 
 module.exports.init = function(io_ext) {

@@ -5628,7 +5628,7 @@ TransactionSignatureSerializer.prototype.buffer = function() {
 Transaction.Serializer = TransactionSignatureSerializer;
 
 var oneBuffer = function() {
-  // bug present in bitcoind which must be also present in bitcore
+  // bug present in pzdcd which must be also present in bitcore
   // see https://bitcointalk.org/index.php?topic=260595
   var ret = new Buffer(32);
   ret.writeUInt8(1, 0);
@@ -6081,7 +6081,7 @@ TransactionBuilder.infoForP2sh = function(opts, networkName) {
 //      ]
 //  ```    
 //   This is compatible con insight's utxo API. 
-//   That amount is in BTCs (as returned in insight and bitcoind).
+//   That amount is in BTCs (as returned in insight and pzdcd).
 //   amountSat (instead of amount) can be given to provide amount in satochis.
 TransactionBuilder.prototype.setUnspent = function(unspent) {
   this.vanilla.utxos = JSON.stringify(unspent);

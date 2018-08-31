@@ -1,8 +1,8 @@
 {
-  "name": "insight-bitcore-api-dash",
-  "description": "An open-source bitcoin blockchain API. The Insight API provides you with a convenient, powerful and simple way to query and broadcast data on the bitcoin network and build your own services with it.",
+  "name": "insight-api-pzdc",
+  "description": "An open-source PZDc blockchain API. The Insight API provides you with a convenient, powerful and simple way to query and broadcast data on the bitcoin network and build your own services with it.",
   "version": "0.2.19",
-  "repository": "git://github.com/bitpay/insight-api.git",
+  "repository": "git://github.com/pzdc-project/insight-api-pzdc.git",
   "contributors": [{
     "name": "Matias Alejo Garcia",
     "email": "ematiu@gmail.com"
@@ -21,20 +21,25 @@
   }, {
     "name": "Ivan Socolsky",
     "email": "jungans@gmail.com"
+  }, {
+    "name": "Boubonic Nugz",
+    "email": "boubonic.nugz@gmail.com"
   }],
   "bugs": {
-    "url": "https://github.com/bitpay/insight-api/issues"
+    "url": "https://github.com/pzdc-project/insight-api-pzdc/issues"
   },
-  "homepage": "https://github.com/bitpay/insight-api",
+  "homepage": "https://github.com/pzdc-project/insight-api-pzdc",
   "license": "MIT",
   "keywords": [
     "insight",
     "insight api",
     "blockchain",
-    "bitcoin api",
+    "pzdc api",
     "blockchain api",
     "json",
-    "bitcore"
+    "bitcore",
+    "pzdc",
+    "project zenith"
   ],
   "engines": {
     "node": "*"
@@ -48,7 +53,7 @@
     "base58-native": "0.1.2",
     "bignum": "*",
     "morgan": "*",
-    "darkcore": "git://github.com/genitrust/darkcore.git",
+    "pzdccore-js": "git://github.com/pzdc-project/pzdccore-js.git",
     "bufferput": "git://github.com/bitpay/node-bufferput.git",
     "buffertools": "*",
     "commander": "^2.3.0",

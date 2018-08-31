@@ -21,7 +21,7 @@ describe('BlockDb fromHashWithInfo', function() {
     return c();
   });
 
-  it('should poll block\'s info from bitcoind', function(done) {
+  it('should poll block\'s info from pzdcd', function(done) {
     bDb.fromHashWithInfo(TESTING_BLOCK, function(err, b2) {
       if (err) done(err);
       assert.equal(b2.hash, TESTING_BLOCK, 'hash');

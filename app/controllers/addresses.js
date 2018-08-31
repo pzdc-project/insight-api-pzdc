@@ -183,7 +183,7 @@ exports.multitxs = function(req, res, next) {
       if (err) return cb(err);
 
       // It could be that a txid is stored at an address but it is
-      // no longer at bitcoind (for example a double spend)
+      // no longer at pzdcd (for example a double spend)
 
       var transactions = _.compact(_.pluck(txs, 'info'));
       transactions = {
